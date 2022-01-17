@@ -23,38 +23,47 @@
 }
 /* Configuramos si un usuario ha activado el modo alto contraste. (BETA) */
 /*
+
+  Si quieres saber cada línea de este archivo te recomiendo que veas estos vídeos:
+  👉 Reset CSS: https://youtu.be/bXqPNoYFK8w
+  👉 Reset PRO en Código: https://www.youtube.com/watch?v=bXqPNoYFK8w    
+
     Estilos generales para que las etiquetas no contengan propiedades
     que nos estorben y en todos los navegadores se vean correctamente
 */
-* {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
   margin: 0;
   padding: 0;
   border: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   vertical-align: baseline;
 }
 
-img {
+img, picture, video, iframe, figure {
   max-width: 100%;
   width: 100%;
   display: block;
-  object-fit: cover;
-  object-position: center center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
 }
 
 a {
   display: block;
-  text-decoration: none;
-  color: inherit;
-  font-size: inherit;
-}
-
-video {
-  max-width: 100%;
-  width: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center center;
 }
 
 p a {
@@ -65,20 +74,26 @@ li {
   list-style-type: none;
 }
 
-table, tr, td {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, h5, h6, strong {
-  -webkit-hyphens: auto;
-          hyphens: auto;
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
   font-weight: inherit;
-  font-size: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
 }
 
 ::selection {
@@ -86,13 +101,29 @@ h1, h2, h3, h4, h5, h6, strong {
   color: var(--blanco);
 }
 
-form, input, textarea, select, button {
+form, input, textarea, select, button, label {
   font-family: inherit;
   font-size: inherit;
   -webkit-hyphens: auto;
+      -ms-hyphens: auto;
           hyphens: auto;
   background-color: transparent;
   display: block;
+  color: inherit;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
 }
 
 body {
@@ -103,14 +134,24 @@ body {
   background-color: var(--blanco);
   color: var(--negro);
   -webkit-hyphens: auto;
+      -ms-hyphens: auto;
           hyphens: auto;
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .carrousel {
@@ -118,47 +159,73 @@ body {
   max-width: 120em;
   padding: 2em;
   color: var(--negro);
+  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   border-radius: 1em;
   background-color: var(--blanco);
-  box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+  -webkit-box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+          box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
   overflow: hidden;
 }
 
 .carrousel .grande {
   width: 200%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: var(--negro);
+  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   border-radius: 1em;
   background-color: var(--blanco);
-  box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+  -webkit-box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+          box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
   padding: 2em;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
 }
 
 .carrousel .img {
   width: calc( 100% / 2 - 2em);
   min-height: 10vh;
   color: var(--negro);
+  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   border-radius: 1em;
   background-color: var(--blanco);
-  box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+  -webkit-box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+          box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
 }
 
 .carrousel .puntos {
   width: 100%;
   margin: 1em 0 0;
   padding: 0.4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .carrousel .punto {
@@ -166,10 +233,13 @@ body {
   height: 2em;
   margin: 1em 1em 0;
   color: var(--negro);
+  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   border-radius: 1em;
   background-color: var(--blanco);
-  box-shadow: 0.6em 0.6em 1.2em var(--sombra-ppal), -0.6em -0.6em 1.2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+  -webkit-box-shadow: 0.6em 0.6em 1.2em var(--sombra-ppal), -0.6em -0.6em 1.2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+          box-shadow: 0.6em 0.6em 1.2em var(--sombra-ppal), -0.6em -0.6em 1.2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+  cursor: pointer;
 }
 
 .carrousel .punto.activo {
