@@ -156,7 +156,7 @@ body {
 
 .carrousel {
   width: 90%;
-  max-width: 120em;
+  max-width: 30em;
   padding: 2em;
   color: var(--negro);
   -webkit-transition: all 0.4s ease;
