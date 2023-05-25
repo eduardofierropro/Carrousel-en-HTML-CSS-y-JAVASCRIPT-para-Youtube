@@ -32,13 +32,3 @@ punto.forEach( ( cadaPunto , i )=> {
 
     })
 })
-
-
-
-
-
-
-
-
-
-( condicion ) ? 'hola' : 'adiós'
